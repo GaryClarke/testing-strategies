@@ -1,4 +1,4 @@
-<?php // src/Entity/TwitterAccount.php
+<?php // src/Entity/TwitterAccount.php (version 2 updated May 2023)
 
 namespace App\Entity;
 

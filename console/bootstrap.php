@@ -1,4 +1,4 @@
-<?php // console/bootstrap.php
+<?php // console/bootstrap.php (version2 updated May 2023)
 use Doctrine\ORM\ORMSetup;
 use Doctrine\ORM\EntityManager;
 

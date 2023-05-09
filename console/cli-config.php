@@ -1,5 +1,5 @@
 #!/usr/bin/env php
-<?php
+<?php // console/cli-config.php (version2 updated May 2023)
 // bin/doctrine
 
 use Doctrine\ORM\Tools\Console\ConsoleRunner;
