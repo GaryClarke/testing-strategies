@@ -25,7 +25,7 @@ class UpdateFollowersCommand
         $this->accountIds = $accountIds;
     }
 
-    public function execute()
+    public function execute(): void
     {
         foreach ($this->accountIds as $accountId) {
 
