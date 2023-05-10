@@ -25,8 +25,9 @@ class TwitterClientTest extends TestCase
 
         $applicationClient->expects($this->once())
             ->method('get')
+            ->with($this->anything())
             ->willReturn('{"data":{"name":"PHPUnit","username":"phpunit","public_metrics":
-                {"followers_count":2227,"following_count":0,"tweet_count":525,"listed_count":107},"id":"1234"}}'
+            {"followers_count":2227,"following_count":0,"tweet_count":525,"listed_count":107},"id":"1234"}}'
             );
 
         // Do something
@@ -40,9 +41,9 @@ class TwitterClientTest extends TestCase
                 "tweet_count"     => 525,
                 "listed_count"    => 107,
             ],
-            "name"            => "PHPUnit",
-            "id"              => "1234",
-            "username"        => "phpunit",
+            "name"           => "PHPUnit",
+            "id"             => "1234",
+            "username"       => "phpunit",
         ],
             $user
         );
