@@ -4,7 +4,7 @@ namespace App\Utility;
 
 class DateHelper
 {
-    public static function weeksBetweenDates(\DateTimeInterface $dateOne, \DateTimeInterface $dateTwo): int
+    public function weeksBetweenDates(\DateTimeInterface $dateOne, \DateTimeInterface $dateTwo): int
     {
         $differenceInDays = $dateOne->diff($dateTwo)->days;
 
