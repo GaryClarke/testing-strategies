@@ -5,13 +5,16 @@ namespace App\Tests\integration\Http;
 use App\Http\SymfonyHttpApplicationClient;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * @group external
+ */
 class SymfonyHttpApplicationClientTest extends TestCase
 {
     private const PHPUNIT_ID = 19057969;
     private const BASE_URL = 'https://api.twitter.com/2/';
 
     /** @test */
-    public function get_retrieves_the_correct_data_from_the_twitter_api()
+    public function get_retrieves_the_correct_data_from_the_twitter_api(): void
     {
         // Setup
         $httpClient = \Symfony\Component\HttpClient\HttpClient::create([
@@ -32,6 +35,5 @@ class SymfonyHttpApplicationClientTest extends TestCase
         $this->assertSame('phpunit', $userData['username']);
         $this->assertArrayHasKey('public_metrics', $userData);
         $this->assertArrayHasKey('followers_count', $userData['public_metrics']);
-
     }
 }
