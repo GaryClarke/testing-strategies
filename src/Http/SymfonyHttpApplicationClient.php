@@ -1,4 +1,4 @@
-<?php // src/Http/SymfonyHttpApplicationClient.php
+<?php // src/Http/SymfonyHttpApplicationClient
 
 namespace App\Http;
 
@@ -24,7 +24,10 @@ class SymfonyHttpApplicationClient implements ApplicationClientInterface
 
         } catch (\Exception $exception) {
 
-            throw new ApplicationClientException($exception->getMessage());
+            throw new ApplicationClientException(
+                $exception->getMessage(),
+                $exception->getCode()
+            );
         }
     }
 }
