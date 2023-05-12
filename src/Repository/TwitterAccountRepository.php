@@ -2,7 +2,6 @@
 
 namespace App\Repository;
 
-use App\Utility\DateHelper;
 use App\Entity\TwitterAccount;
 use Doctrine\ORM\EntityRepository;
 
@@ -19,5 +18,18 @@ class TwitterAccountRepository extends EntityRepository
 
         // What should happen if null?
         return $query->getOneOrNullResult();
+    }
+
+    public function addFromArray(array $userData): void
+    {
+        $twitterAccount = new $this->_entityName();
+        $twitterAccount->setTwitterAccountId($userData['id']);
+        $twitterAccount->setUsername($userData['username']);
+        $twitterAccount->setTweetCount($userData['tweet_count']);
+        $twitterAccount->setListedCount($userData['listed_count']);
+        $twitterAccount->setFollowingCount($userData['following_count']);
+        $twitterAccount->setFollowerCount($userData['followers_count']);
+        $twitterAccount->setFollowersPerWeek($userData['new_followers_per_week']);
+        $this->_em->persist($twitterAccount);
     }
 }
