@@ -8,28 +8,6 @@ use Doctrine\ORM\EntityRepository;
 
 class TwitterAccountRepository extends EntityRepository
 {
-    public function newFollowersPerWeek(
-        int $accountId,
-        int $currentFollowerCount,
-        \DateTimeInterface $checkDate
-    ): int
-    {
-
-        $lastRecord = $this->lastRecord($accountId);
-
-        if (!$lastRecord) {
-            return 0;
-        }
-
-        $followerCountDifference = $currentFollowerCount - $lastRecord->getFollowerCount();
-
-        $fullWeeks = DateHelper::weeksBetweenDates($checkDate, $lastRecord->getCreatedAt());
-
-        $newFollowersPerWeek = $followerCountDifference / max($fullWeeks, 1);
-
-        return (int) $newFollowersPerWeek;
-    }
-
     public function lastRecord(int $accountId): ?TwitterAccount
     {
         $query = $this->createQueryBuilder('ta')
