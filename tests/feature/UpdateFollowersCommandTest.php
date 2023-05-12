@@ -62,15 +62,34 @@ class UpdateFollowersCommandTest extends DatabaseDependantTestCase
         $updateFollowersCommand = new UpdateFollowersCommand(
             $this->entityManager,
             $twitterClient,
-            $accountIds
+            $accountIds,
+            date_create_immutable('2022-01-01')
         );
 
         /********************************** DO SOMETHING **********************************/
 
-
+        $updateFollowersCommand->execute();
 
         /********************************** MAKE ASSERTIONS *****************************/
 
+        $this->assertDatabaseHasEntity(TwitterAccount::class, [
+            'twitterAccountId' => self::GCT_ID,
+            'username'         => $gctAccount->getUsername(),
+            'tweetCount'       => 100,
+            'listedCount'      => 100,
+            'followingCount'   => 100,
+            'followerCount'    => 500,
+            'followersPerWeek' => 7
+        ]);
 
+        $this->assertDatabaseHasEntity(TwitterAccount::class, [
+            'twitterAccountId' => self::PHPUNIT_ID,
+            'username'         => $phpUnitAcct->getUsername(),
+            'tweetCount'       => 100,
+            'listedCount'      => 100,
+            'followingCount'   => 100,
+            'followerCount'    => 2000,
+            'followersPerWeek' => 19
+        ]);
     }
 }
