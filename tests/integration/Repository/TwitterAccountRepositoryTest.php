@@ -78,7 +78,7 @@ class TwitterAccountRepositoryTest extends DatabaseDependantTestCase
         $this->repository->addFromArray($userData);
         $this->entityManager->flush();
 
-        $result = $this->repository->findOneBy([
+        $this->assertDatabaseHasEntity(TwitterAccount::class, [
             'twitterAccountId' => $userData['id'],
             'followersPerWeek' => $userData['new_followers_per_week'],
             'followerCount'    => $userData['followers_count'],
@@ -87,8 +87,5 @@ class TwitterAccountRepositoryTest extends DatabaseDependantTestCase
             'tweetCount'       => $userData['tweet_count'],
             'listedCount'      => $userData['listed_count'],
         ]);
-
-        // Make assertions
-        $this->assertTrue((bool) $result, "A TwitterAccount record could not be found with the supplied criteria");
     }
 }

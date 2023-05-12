@@ -22,4 +22,13 @@ class DatabaseDependantTestCase extends TestCase
         $this->entityManager->close();
         $this->entityManager = null;
     }
+
+    public function assertDatabaseHasEntity(string $entityName, array $criteria): void
+    {
+        $result = $this->entityManager->getRepository($entityName)->findOneBy($criteria);
+
+        // Make assertions
+        $this->assertTrue((bool) $result, "A $entityName record could not be found with the supplied criteria");
+    }
 }
+
