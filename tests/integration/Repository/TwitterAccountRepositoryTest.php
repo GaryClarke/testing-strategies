@@ -45,4 +45,17 @@ class TwitterAccountRepositoryTest extends DatabaseDependantTestCase
         $this->assertSame($lastRecord->getId(), $currentAccount->getId());
         $this->assertSame(2, $lastRecord->getId());
     }
+
+    /** @test */
+    public function lastRecord_returns_null_when_no_records_found(): void
+    {
+        // Setup
+        $accountId = 99999;
+
+        // Do Something
+        $lastRecord = $this->repository->lastRecord($accountId);
+
+        // Make assertions
+        $this->assertNull($lastRecord);
+    }
 }
