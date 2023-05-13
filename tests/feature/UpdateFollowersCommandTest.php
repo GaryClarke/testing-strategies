@@ -46,10 +46,6 @@ class UpdateFollowersCommandTest extends DatabaseDependantTestCase
         // Mock ApplicationClient get method return values * 2
         $applicationClient->expects($this->exactly(2))
             ->method('get')
-            ->with(
-                ['https://api.twitter.com/2/users/12345?user.fields=public_metrics'],
-                ['https://api.twitter.com/2/users/54321?user.fields=public_metrics'],
-            )
             ->will($this->onConsecutiveCalls(
                 '{"data":{"public_metrics":{"followers_count":500,"following_count":100,"tweet_count":100,"listed_count":100},"name":"Gary Clarke","id":'
                 . self::GCT_ID . ',"username":"garyclarketech"}}',
