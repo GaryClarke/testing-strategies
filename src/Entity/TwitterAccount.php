@@ -46,11 +46,6 @@ class TwitterAccount
         return $this->id;
     }
 
-    public function getTwitterAccountId(): int
-    {
-        return $this->twitterAccountId;
-    }
-
     public function setTwitterAccountId(int $twitterAccountId): void
     {
         $this->twitterAccountId = $twitterAccountId;
@@ -66,11 +61,6 @@ class TwitterAccount
         $this->followerCount = $followerCount;
     }
 
-    public function getFollowersPerWeek(): ?int
-    {
-        return $this->followersPerWeek;
-    }
-
     public function setFollowersPerWeek(?int $followersPerWeek): void
     {
         $this->followersPerWeek = $followersPerWeek;
@@ -81,19 +71,9 @@ class TwitterAccount
         return $this->createdAt;
     }
 
-    public function getUsername(): string
-    {
-        return $this->username;
-    }
-
     public function setUsername(string $username): void
     {
         $this->username = $username;
-    }
-
-    public function getFollowingCount(): ?int
-    {
-        return $this->followingCount;
     }
 
     public function setFollowingCount(?int $followingCount): void
@@ -101,19 +81,9 @@ class TwitterAccount
         $this->followingCount = $followingCount;
     }
 
-    public function getTweetCount(): ?int
-    {
-        return $this->tweetCount;
-    }
-
     public function setTweetCount(?int $tweetCount): void
     {
         $this->tweetCount = $tweetCount;
-    }
-
-    public function getListedCount(): ?int
-    {
-        return $this->listedCount;
     }
 
     public function setListedCount(?int $listedCount): void
