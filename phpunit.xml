@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" colors="true" bootstrap="tests/bootstrap.php"
-         stopOnError="true" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.1/phpunit.xsd"
-         cacheDirectory=".phpunit.cache">
+<?xml version="1.0" encoding="UTF-8"?> <!-- phpunit.xml -->
+<phpunit colors="true" bootstrap="tests/bootstrap.php" stopOnError="true">
+
     <php>
-        <env name="APP_ENV" value="test" force="true"/>
-        <env name="DB_HOST" value="localhost" force="true"/>
+        <env name="APP_ENV" value="test" force="true" />
+        <env name="DB_HOST" value="localhost" force="true" />
     </php>
+
     <testsuites>
         <testsuite name="Tests">
             <directory>tests</directory>
@@ -14,15 +14,10 @@
             <directory>tests/integration</directory>
         </testsuite>
     </testsuites>
+
     <groups>
         <exclude>
             <group>external</group>
         </exclude>
     </groups>
-    <coverage/>
-    <source>
-        <include>
-            <directory suffix=".php">src</directory>
-        </include>
-    </source>
 </phpunit>
