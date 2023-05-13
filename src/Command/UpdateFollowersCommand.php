@@ -39,9 +39,10 @@ class UpdateFollowersCommand
             $repo = $this->entityManager->getRepository(TwitterAccount::class);
             $lastRecord = $repo->lastRecord($accountId);
 
-            $newFollowersPerWeek = (new TwitterStatisticsCalculator(new DateHelper()))
+            $user['new_followers_per_week'] = (new TwitterStatisticsCalculator(
+                new DateHelper()))
                 ->newFollowersPerWeek(
-                    $lastRecord, $user['public_metrics']['followers_count'], $this->processDate
+                    $lastRecord, $user['followers_count'], $this->processDate
                 );
 
             // 3. Create a new record in DB with updated values
@@ -49,7 +50,5 @@ class UpdateFollowersCommand
         }
 
         $this->entityManager->flush();
-
-        fwrite(STDOUT, 'Process complete' . PHP_EOL);
     }
 }
