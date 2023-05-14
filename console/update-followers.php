@@ -9,7 +9,8 @@ $twitterClient = new \App\Http\TwitterClient($applicationClient);
 $command = new \App\Command\UpdateFollowersCommand(
     $entityManager,
     $twitterClient,
-    [19057969, 1285294171033604101]
+    [19057969, 1285294171033604101],
+    date_create_immutable()
 );
 
 $command->execute();
