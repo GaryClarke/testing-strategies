@@ -25,6 +25,6 @@ $entityManager = new EntityManager($conn, $config);
 // This should ideally be stored elsewhere...be sure not to push this file to a public repo
 $bearerToken = 'Bearer <YOUR FAKE TOKEN GOES HERE>';
 
-$httpClient = \Symfony\Component\HttpClient\HttpClient::create([
+$httpClient = new \GuzzleHttp\Client([
     'headers' => ['Authorization' => $bearerToken]
 ]);
