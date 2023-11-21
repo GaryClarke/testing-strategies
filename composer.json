@@ -1,7 +1,8 @@
 {
     "require-dev": {
         "phpunit/phpunit": "^9.5 || ^10.0",
-        "symfony/var-dumper": "^5.4 || ^6.0"
+        "symfony/var-dumper": "^5.4 || ^6.0",
+        "phpstan/phpstan": "^1.10"
     },
 
     "autoload": {
