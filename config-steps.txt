@@ -1,0 +1,8 @@
+- create a phpstan.neon.dist file
+    - level 6
+    - paths > src + tests
+- generate a level 6 baseline using this config
+    - include baseline file in config
+    - run phpstan again to check baseline is working
+
+vendor/bin/phpstan analyse --level 6 --configuration phpstan.neon.dist src/ tests/ --generate-baseline
