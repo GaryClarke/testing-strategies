@@ -4,7 +4,7 @@
 
 <hr>
 
-A comprehensive step-by-step video course on learning how to write PHP code that is testable.
+A comprehensive step-by-step video course guiding you through each step to master the art of writing PHP code that can be easily tested.
 
 
 To get started, all you need to do is:
