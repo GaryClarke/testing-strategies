@@ -16,6 +16,7 @@ All the code examples used in the lessons are stored in individual branches with
 To Set up your development environment, you will need the following installed on your local machine
 
 1. Composer
+2. PHPUnit
 
 All these are for your information. The most exciting part is that every single step is covered in the <a href="https://www.garyclarke.tech/p/testing-php">course</a>.
 
