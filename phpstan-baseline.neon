@@ -1,0 +1,46 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Method App\\\\Http\\\\TwitterClient\\:\\:getUserById\\(\\) has parameter \\$accountId with no type specified\\.$#"
+			count: 1
+			path: src/Http/TwitterClient.php
+
+		-
+			message: "#^Method App\\\\Http\\\\TwitterClient\\:\\:getUserById\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Http/TwitterClient.php
+
+		-
+			message: "#^Class App\\\\Repository\\\\TwitterAccountRepository extends generic class Doctrine\\\\ORM\\\\EntityRepository but does not specify its types\\: TEntityClass$#"
+			count: 1
+			path: src/Repository/TwitterAccountRepository.php
+
+		-
+			message: "#^Method App\\\\Repository\\\\TwitterAccountRepository\\:\\:addFromArray\\(\\) has parameter \\$userData with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Repository/TwitterAccountRepository.php
+
+		-
+			message: "#^Method App\\\\Utility\\\\ArrayHelper\\:\\:flatten\\(\\) has parameter \\$array with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Utility/ArrayHelper.php
+
+		-
+			message: "#^Method App\\\\Utility\\\\ArrayHelper\\:\\:flatten\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Utility/ArrayHelper.php
+
+		-
+			message: "#^Method App\\\\Tests\\\\DatabaseDependantTestCase\\:\\:assertDatabaseHasEntity\\(\\) has parameter \\$criteria with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: tests/DatabaseDependantTestCase.php
+
+		-
+			message: "#^Unable to resolve the template type T in call to method Doctrine\\\\ORM\\\\EntityManagerInterface\\:\\:getRepository\\(\\)$#"
+			count: 1
+			path: tests/DatabaseDependantTestCase.php
+
+		-
+			message: "#^Undefined variable\\: \\$entityManager$#"
+			count: 2
+			path: tests/DatabaseDependantTestCase.php
